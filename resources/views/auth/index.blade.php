@@ -27,17 +27,10 @@
                         @endif
                         <form action="{{route('login.auth')}}" method="post">
                             @csrf
-
-
-
                             <div class="form-floating mb-3">
                                 <input novalidate type="email" id="floatingEmail" placeholder="@lang('lang.email')" class="form-control alert alert-primary" role="alert" name="email" value="{{old('email')}}">
                                 <label for="floatingEmail">@lang('lang.email')</label>
                             </div>
-                            
-                            
-                            
-                            
                             <div class="form-floating mb-3">
                                 <input type="password" id="floatingPassword" placeholder="@lang('lang.password')" class="form-control alert alert-primary" role="alert" name="password">
                                 <label for="floatingPassword">@lang('lang.password')</label>

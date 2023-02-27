@@ -2,18 +2,15 @@
 @section('title', 'Blog')
 @section('content')
 @php $locale = session()->get('locale'); @endphp
-
 <div class="container mt-5">
     <div class="row pt-5">
         <div class="col-12 pt-2">
             <h4 class="display-one mt-2">
-
                 @if ($locale=='fr' && isset($blogPost->title_fr))
                 {{ $blogPost->title_fr }}
                 @else
                 {{ $blogPost->title }}
                 @endif
-                
             </h4>
             <hr>
             <p>
@@ -22,28 +19,18 @@
                 @else
                 {!! $blogPost->body !!}
                 @endif
-
             </p>
-
             @if ($locale=='fr')
             <strong>@lang('lang.category'): @isset($blogPost->blogHasCategory->categorie_fr) {{ $blogPost->blogHasCategory->categorie_fr}} @endisset</strong>
-
             @else
             <strong>@lang('lang.category'): @isset($blogPost->blogHasCategory->categorie) {{ $blogPost->blogHasCategory->categorie}} @endisset</strong>
-
             @endif
-
-
-
             <hr>
             <strong>@lang('lang.author'): {{ $blogPost->blogHasUser->name}}</strong>
             <hr>
         </div>
     </div>
     <div class="row text-center mb-2">
-
-
-
         @if ($userId == $blogPost->user_id)
         <div class="col-4">
             <a href="{{route('blog.edit', $blogPost->id)}}" class="btn btn-success">@lang('lang.update')</a>
@@ -54,17 +41,9 @@
                 @lang('lang.erase')
             </button>
         </div>
-
-
             @endif
-
-
-
     </div>
 </div>
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -87,5 +66,4 @@
         </div>
     </div>
 </div>
-
 @endsection

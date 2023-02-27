@@ -36,14 +36,6 @@ return [
     'update' => 'modifier',
     'erase_article' => 'Effacer un Article',
     'erase_text' => 'Etes vous sure de vouloir supprimer cet article ?',
-
     'close' => 'fermer',
     'categorie' => 'categorie_fr',
-
-
-
-
-
-
-
 ];

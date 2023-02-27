@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,30 +8,13 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <!-- pour loader les icones de drapeaux -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
-
 </head>
-
 <body class="bg-dark-subtle">
-
     @php $langNavig = Request::server('HTTP_ACCEPT_LANGUAGE'); @endphp
     <!-- Pour get la langue du navigateur -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-  <a class="navbar-brand" href="{{route('blog.index')}}">Forum des Étudiants</a>
+  <a class="navbar-brand" href="{{route('blog.index')}}">@lang('lang.student_furum')</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon m-2">MENU</span>
     </button>
@@ -75,22 +57,7 @@
     </div>
   </div>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @yield('content')
 </body>
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-
 </html>

@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 <main class="login-form">
@@ -18,7 +17,6 @@
                         @endif
                         @if(!$errors->isEmpty())
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-
                             <ul>
                                 @foreach($errors->all() as $error)
                                 <li class='text-danger'>{{ $error }}</li>
