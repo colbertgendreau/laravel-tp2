@@ -7,6 +7,19 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+
+
+    protected $fillable = [
+        'title',
+        'title_fr',
+        'body',
+        'body_fr',
+        'user_id',
+        'categories_id'
+    ];
+
+
+
     static public function selectCategory()
     {
         $lang = session()->get('localeDB');
