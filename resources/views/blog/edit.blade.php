@@ -1,6 +1,32 @@
 @extends('layouts.app')
 @section('title', 'Mettre a jour')
 @section('content')
+@php $locale = session()->get('locale'); @endphp
+
+
+
+<nav class="mt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">@lang('lang.account')</a></li>
+        <li class="breadcrumb-item"><a href="{{route('blog.index')}}">@if ($locale=='fr' && isset($blogPost->title_fr))
+            {{ $blogPost->title_fr }}
+            @else
+            {{ $blogPost->title }}
+            @endif</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@lang('lang.update')</li>
+    </ol>
+</nav>
+
+
+
 <div class="container pt-5">
     <div class="row mt-5">
         <div class="col-12 text-center mt-2">

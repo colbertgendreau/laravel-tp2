@@ -14,13 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.index');
+    return view('welcome');
 });
 
+
+
+
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\DocumentController;
 
+Route::get('home', [Controller::class, 'home'])->name('home');
 Route::get('blog', [BlogPostController::class, 'index'])->name('blog.index')->middleware('auth');  // middleware() pour retourner a login si pas connecté
 Route::get('blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show')->middleware('auth');
 Route::get('blog-create', [BlogPostController::class, 'create'])->name('blog.create')->middleware('auth');

@@ -2,6 +2,20 @@
 @section('title', 'Blog List')
 @section('content')
 @php $locale = session()->get('locale'); @endphp
+<nav class="mt-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">@lang('lang.my_account')</li>
+  </ol>
+</nav>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 text-center pt-5">
@@ -30,8 +44,8 @@
                         <table class="table table-sm">
                             <thead>
                                 <tr class="bg-light">
-                                    <th scope="col">@lang('lang.titre')</th>
-                                    <th scope="col">@lang('lang.auteur')</th>
+                                    <th scope="col">@lang('lang.title')</th>
+                                    <th scope="col">@lang('lang.author')</th>
                                     <th scope="col">@lang('lang.date_publication')</th>
                                 </tr>
                             </thead>
@@ -65,8 +79,8 @@
                         <table class="table table-sm ">
                             <thead>
                                 <tr class="bg-light">
-                                    <th scope="col">@lang('lang.titre')</th>
-                                    <th scope="col">@lang('lang.auteur')</th>
+                                    <th scope="col">@lang('lang.title')</th>
+                                    <th scope="col">@lang('lang.author')</th>
                                     <th scope="col">@lang('lang.date_publication')</th>
                                     <th scope="col">@lang('lang.download')</th>
                                 </tr>

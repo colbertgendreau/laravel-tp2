@@ -56,6 +56,9 @@ class DocumentController extends Controller
         $file = $request->path;
         $filename = time() . '_' . $file->getClientOriginalName();
         $location = 'public/uploads/';
+
+
+
         $file->storeAs($location, $filename);
         $newDocument = Document::create([
             'title' => $request->title,
@@ -77,6 +80,13 @@ class DocumentController extends Controller
         $dossier = $document->path;
         $path = storage_path('app/' . $dossier);
         $fileName = $document->title;
+
+        
+        echo " path : ";
+        echo $path;
+        echo " filemane : ";
+        echo $fileName;
+
         return Response::download($path, $fileName);
     }
     /**

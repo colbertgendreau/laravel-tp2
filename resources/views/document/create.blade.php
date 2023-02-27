@@ -5,7 +5,7 @@
     <div class="row mt-5">
         <div class="col-12 text-center mt-2">
             <h1 class="display-one">
-                @lang('lang.add_article')
+                @lang('lang.add_document')
             </h1>
             <hr>
         </div>
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="control-group col-12">
-                            <label class="form-label" for="inputFile">File:</label>
+                            <label class="form-label" for="inputFile">@lang('lang.document'):</label>
                             <input type="file" name="path" id="path" class="form-control alert alert-warning">
                         </div>
                     </div>

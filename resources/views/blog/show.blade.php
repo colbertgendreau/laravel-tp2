@@ -2,8 +2,31 @@
 @section('title', 'Blog')
 @section('content')
 @php $locale = session()->get('locale'); @endphp
-<div class="container mt-5">
-    <div class="row pt-5">
+
+
+<nav class="mt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{route('blog.index')}}">@lang('lang.forum')</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> @if ($locale=='fr' && isset($blogPost->title_fr))
+            {{ $blogPost->title_fr }}
+            @else
+            {{ $blogPost->title }}
+            @endif
+        </li>
+    </ol>
+</nav>
+
+
+<div class="container">
+    <div class="row">
         <div class="col-12 pt-2">
             <h4 class="display-one mt-2">
                 @if ($locale=='fr' && isset($blogPost->title_fr))
@@ -41,7 +64,7 @@
                 @lang('lang.erase')
             </button>
         </div>
-            @endif
+        @endif
     </div>
 </div>
 <!-- Modal -->

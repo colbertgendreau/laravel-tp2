@@ -27,7 +27,7 @@
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             @guest
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('user.registration')}}">@lang('lang.signup')</a>
+            <a class="nav-link" aria-current="page" href="{{route('user.registration')}}">@lang('lang.signup')</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('login')}}">@lang('lang.login')</a>

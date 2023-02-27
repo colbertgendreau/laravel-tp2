@@ -2,8 +2,31 @@
 @section('title', 'Document')
 @section('content')
 @php $locale = session()->get('locale'); @endphp
-<div class="container mt-5">
-    <div class="row pt-5">
+
+<nav class="mt-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{route('blog.index')}}">@lang('lang.documents')</a></li>
+    <li class="breadcrumb-item active" aria-current="page">                @if ($locale=='fr' && isset($document->title_fr))
+                {{ $document->title_fr }}
+                @else
+                {{ $document->title }}
+                @endif
+</li>
+  </ol>
+</nav>
+
+
+
+<div class="container">
+    <div class="row">
         <div class="col-12 pt-2">
             <h4 class="display-one mt-2">
                 @if ($locale=='fr' && isset($document->title_fr))
@@ -12,11 +35,6 @@
                 {{ $document->title }}
                 @endif
             </h4>
-            <hr>
-            <p>
-                {!! $document->path !!}
-            </p>
-            <hr>
             <strong>@lang('lang.author'): {{ $document->documentHasUser->name}}</strong>
             <hr>
         </div>

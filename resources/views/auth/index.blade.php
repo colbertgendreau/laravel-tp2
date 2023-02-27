@@ -1,8 +1,24 @@
 @extends('layouts.app')
 @section('content')
+
+
+
+<nav class="mt-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">@lang('lang.login')</li>
+  </ol>
+</nav>
 <main class="login-form">
     <div class="container mt-5">
-        <div class="row justify-content-center pt-2">
+        <div class="row justify-content-center">
             <div class="col-md-8 pt-4">
                 <h3 class="text-center mb-2">
                     @lang('lang.login')

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 class CustomAuthController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -56,9 +59,12 @@ class CustomAuthController extends Controller
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
+
         $etudiant = new Etudiant;
         $etudiant->users_id = $user->id;
         $etudiant->save();
+
+        
         $to_name = $request->name;
         $to_email = $request->email;
         $body= "<a href=''>Clique pour confirmer</a>";

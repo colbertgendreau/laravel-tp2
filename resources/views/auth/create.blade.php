@@ -21,6 +21,20 @@
     </script>
 </head>
 
+<nav class="mt-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">@lang('lang.signup')</li>
+  </ol>
+</nav>
+
 
 <main class="login-form mt-5">
     <div class="container pt-5">
