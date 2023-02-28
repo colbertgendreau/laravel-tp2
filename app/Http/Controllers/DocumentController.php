@@ -17,6 +17,8 @@ class DocumentController extends Controller
             ->paginate(10);
         // $documents = Document::all();
         //return $documents[0]->title;
+
+
         return view('document.index', ['documents' => $documents]);
     }
     /**
@@ -82,11 +84,6 @@ class DocumentController extends Controller
         $fileName = $document->title;
 
         
-        echo " path : ";
-        echo $path;
-        echo " filemane : ";
-        echo $fileName;
-
         return Response::download($path, $fileName);
     }
     /**
